@@ -48,7 +48,7 @@ Usei o Git para guardar as etapas em commits separados. O GitHub hospeda o repos
 | `52c5621` | Correção mínima da soma |
 | `c8ca58a` | Refatoração e testes de regressão |
 
-Os arquivos da entrega estão na branch `dev`. [Abrir a entrega](https://github.com/andrecoedev/Alta-Qualidade-em-Software-Parada-Obrigat-ria-2/tree/dev).
+Os arquivos da entrega estão na branch `trabalho-faculdade`. [Abrir a entrega](https://github.com/andrecoedev/Alta-Qualidade-em-Software-Parada-Obrigat-ria-2/tree/trabalho-faculdade).
 
 ## Reflexão sobre Scrum
 

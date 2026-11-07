@@ -1,0 +1,130 @@
+Evidencias do codigo original - 07/11/2026
+Python: 3.14.3
+
+BUG-01
+Entradas: 1 -> 2 -> 3 -> n
+Esperado: Resultado: 5.0
+Codigo de saida: 0
+Saida: Digite o número da operação: Digite o primeiro número: Digite o segundo número: Resultado: 7.0
+Erros/avisos: nenhum
+
+BUG-02
+Entradas: 4 -> 8 -> 0 -> n
+Esperado: Mensagem de erro sem encerrar com excecao
+Codigo de saida: 1
+Saida: 
+Erros/avisos: Traceback (most recent call last):
+  File "C:\Projetos\SENAI\Alta Qualidade em Software\Parada Obrigatória 2\Calculadora.py", line 108, in <module>
+    calculadora_cientifica()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Projetos\SENAI\Alta Qualidade em Software\Parada Obrigatória 2\Calculadora.py", line 73, in calculadora_cientifica
+    print("Resultado:", divisao(x, y))
+                        ~~~~~~~^^^^^^
+  File "C:\Projetos\SENAI\Alta Qualidade em Software\Parada Obrigatória 2\Calculadora.py", line 13, in divisao
+    return x / y
+           ~~^~~
+ZeroDivisionError: division by zero
+
+BUG-03a
+Entradas: 7 -> 5 -> n
+Esperado: Resultado: 120
+Codigo de saida: 0
+Saida: Digite o número da operação: Digite o número: Resultado: 0
+Erros/avisos: nenhum
+
+BUG-03b
+Entradas: 7 -> 0 -> n
+Esperado: Resultado: 1
+Codigo de saida: 0
+Saida: Digite o número da operação: Digite o número: Resultado: 0
+Erros/avisos: nenhum
+
+BUG-04
+Entradas: 7 -> -3 -> n
+Esperado: Rejeitar fatorial de numero negativo
+Codigo de saida: 0
+Saida: Digite o número da operação: Digite o número: Resultado: 1
+Erros/avisos: nenhum
+
+BUG-05
+Entradas: 8 -> 1 -> n
+Esperado: Resultado: 0.0
+Codigo de saida: 1
+Saida: 
+Erros/avisos: Traceback (most recent call last):
+  File "C:\Projetos\SENAI\Alta Qualidade em Software\Parada Obrigatória 2\Calculadora.py", line 108, in <module>
+    calculadora_cientifica()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Projetos\SENAI\Alta Qualidade em Software\Parada Obrigatória 2\Calculadora.py", line 87, in calculadora_cientifica
+    print("Resultado:", logaritmo_natural(x))
+                        ~~~~~~~~~~~~~~~~~^^^
+  File "C:\Projetos\SENAI\Alta Qualidade em Software\Parada Obrigatória 2\Calculadora.py", line 32, in logaritmo_natural
+    return np.ln(x)
+           ^^^^^
+  File "C:\Projetos\SENAI\Alta Qualidade em Software\Parada Obrigatória 2\.venv\Lib\site-packages\numpy\__init__.py", line 782, in __getattr__
+    raise AttributeError(f"module {__name__!r} has no attribute {attr!r}")
+AttributeError: module 'numpy' has no attribute 'ln'
+
+BUG-06
+Entradas: 9 -> 100 -> n
+Esperado: Resultado: 2.0
+Codigo de saida: 0
+Saida: Digite o número da operação: Digite o número: Resultado: 4.605170185988092
+Erros/avisos: nenhum
+
+BUG-07
+Entradas: 9 -> 0 -> n
+Esperado: Erro: Logaritmo de numero nao positivo
+Codigo de saida: 0
+Saida: Digite o número da operação: Digite o número: Resultado: -inf
+Erros/avisos: C:\Projetos\SENAI\Alta Qualidade em Software\Parada Obrigatória 2\Calculadora.py:37: RuntimeWarning: divide by zero encountered in log
+  return np.log(x)
+
+BUG-08
+Entradas: 10 -> n
+Esperado: Pedir angulo e calcular seno
+Codigo de saida: 0
+Saida: Digite o número da operação: Operação inválida. Tente novamente.
+Erros/avisos: nenhum
+
+BUG-09
+Entradas: 11 -> 60 -> n
+Esperado: Resultado proximo de 0.5
+Codigo de saida: 1
+Saida: 
+Erros/avisos: Traceback (most recent call last):
+  File "C:\Projetos\SENAI\Alta Qualidade em Software\Parada Obrigatória 2\Calculadora.py", line 108, in <module>
+    calculadora_cientifica()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Projetos\SENAI\Alta Qualidade em Software\Parada Obrigatória 2\Calculadora.py", line 95, in calculadora_cientifica
+    print("Resultado:", cosseno(x))
+                        ^^^^^^^
+NameError: name 'cosseno' is not defined
+
+BUG-10
+Entradas: 12 -> 45 -> n
+Esperado: Resultado proximo de 1.0
+Codigo de saida: 1
+Saida: 
+Erros/avisos: Traceback (most recent call last):
+  File "C:\Projetos\SENAI\Alta Qualidade em Software\Parada Obrigatória 2\Calculadora.py", line 108, in <module>
+    calculadora_cientifica()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Projetos\SENAI\Alta Qualidade em Software\Parada Obrigatória 2\Calculadora.py", line 99, in calculadora_cientifica
+    print("Resultado:", tangente(x, radianos=False))
+                        ^^^^^^^^
+NameError: name 'tangente' is not defined
+
+BUG-11
+Entradas: 1 -> abc
+Esperado: Avisar entrada invalida sem encerrar com excecao
+Codigo de saida: 1
+Saida: 
+Erros/avisos: Traceback (most recent call last):
+  File "C:\Projetos\SENAI\Alta Qualidade em Software\Parada Obrigatória 2\Calculadora.py", line 108, in <module>
+    calculadora_cientifica()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Projetos\SENAI\Alta Qualidade em Software\Parada Obrigatória 2\Calculadora.py", line 64, in calculadora_cientifica
+    x = float(input("Digite o primeiro número: "))
+        ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: 'abc'

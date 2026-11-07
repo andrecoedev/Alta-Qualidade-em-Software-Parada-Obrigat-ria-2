@@ -1,0 +1,19 @@
+test_adicao_com_decimais (test_calculadora.TestCalculadora.test_adicao_com_decimais) ... ok
+test_adicao_com_zero (test_calculadora.TestCalculadora.test_adicao_com_zero) ... ok
+test_adicao_de_dois_positivos (test_calculadora.TestCalculadora.test_adicao_de_dois_positivos) ... ok
+test_adicao_de_negativos (test_calculadora.TestCalculadora.test_adicao_de_negativos) ... ok
+test_divisao (test_calculadora.TestCalculadora.test_divisao) ... ok
+test_logaritmos_negativos (test_calculadora.TestCalculadora.test_logaritmos_negativos) ... ok
+test_multiplicacao (test_calculadora.TestCalculadora.test_multiplicacao) ... ok
+test_opcao_invalida (test_calculadora.TestCalculadora.test_opcao_invalida) ... ok
+test_potencia (test_calculadora.TestCalculadora.test_potencia) ... ok
+test_raiz_negativa (test_calculadora.TestCalculadora.test_raiz_negativa) ... ok
+test_raiz_quadrada (test_calculadora.TestCalculadora.test_raiz_quadrada) ... ok
+test_realizar_outra_operacao (test_calculadora.TestCalculadora.test_realizar_outra_operacao) ... ok
+test_sair (test_calculadora.TestCalculadora.test_sair) ... ok
+test_subtracao (test_calculadora.TestCalculadora.test_subtracao) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 2.781s
+
+OK

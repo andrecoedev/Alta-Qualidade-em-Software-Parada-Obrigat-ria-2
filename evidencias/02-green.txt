@@ -1,0 +1,6 @@
+test_adicao_de_dois_positivos (test_calculadora.TestCalculadora.test_adicao_de_dois_positivos) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.163s
+
+OK

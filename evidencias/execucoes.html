@@ -1,0 +1,87 @@
+<!doctype html><html lang="pt-BR"><meta charset="utf-8"><title>Evidências da calculadora</title><style>
+body{font-family:Arial,sans-serif;margin:0;color:#171717;background:white}section{padding:28px;width:1160px;box-sizing:border-box}h1{margin:0 0 8px;font-size:26px}h2{font-size:17px;margin:0 0 8px}p{font-size:14px;margin:6px 0 14px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}article{border:1px solid #aaa;padding:14px;break-inside:avoid}pre{font-family:Consolas,monospace;font-size:12px;line-height:1.5;white-space:pre-wrap;overflow-wrap:anywhere;margin:0}#tdd article{margin-top:12px}
+</style><section id="bugs"><h1>Bugs - código original</h1><p>André Lucas Coelho de Jesus - Alta Qualidade em Software - 07/11/2026</p><p>Resumo das saídas reais de 00-bugs-original.txt. Os logs completos incluem as exceções.</p><div class="grid"><article><h2>BUG-01</h2><pre>Entradas: 1 -&gt; 2 -&gt; 3 -&gt; n
+Esperado: Resultado: 5.0
+Codigo de saida: 0
+Saida: Digite o número da operação: Digite o primeiro número: Digite o segundo número: Resultado: 7.0</pre></article><article><h2>BUG-02</h2><pre>Entradas: 4 -&gt; 8 -&gt; 0 -&gt; n
+Esperado: Mensagem de erro sem encerrar com excecao
+Codigo de saida: 1
+Saida:
+ZeroDivisionError: division by zero</pre></article><article><h2>BUG-03a</h2><pre>Entradas: 7 -&gt; 5 -&gt; n
+Esperado: Resultado: 120
+Codigo de saida: 0
+Saida: Digite o número da operação: Digite o número: Resultado: 0</pre></article><article><h2>BUG-03b</h2><pre>Entradas: 7 -&gt; 0 -&gt; n
+Esperado: Resultado: 1
+Codigo de saida: 0
+Saida: Digite o número da operação: Digite o número: Resultado: 0</pre></article><article><h2>BUG-04</h2><pre>Entradas: 7 -&gt; -3 -&gt; n
+Esperado: Rejeitar fatorial de numero negativo
+Codigo de saida: 0
+Saida: Digite o número da operação: Digite o número: Resultado: 1</pre></article><article><h2>BUG-05</h2><pre>Entradas: 8 -&gt; 1 -&gt; n
+Esperado: Resultado: 0.0
+Codigo de saida: 1
+Saida:
+AttributeError: module &#x27;numpy&#x27; has no attribute &#x27;ln&#x27;</pre></article><article><h2>BUG-06</h2><pre>Entradas: 9 -&gt; 100 -&gt; n
+Esperado: Resultado: 2.0
+Codigo de saida: 0
+Saida: Digite o número da operação: Digite o número: Resultado: 4.605170185988092</pre></article><article><h2>BUG-07</h2><pre>Entradas: 9 -&gt; 0 -&gt; n
+Esperado: Erro: Logaritmo de numero nao positivo
+Codigo de saida: 0
+Saida: Digite o número da operação: Digite o número: Resultado: -inf
+RuntimeWarning: divide by zero encountered in log</pre></article><article><h2>BUG-08</h2><pre>Entradas: 10 -&gt; n
+Esperado: Pedir angulo e calcular seno
+Codigo de saida: 0
+Saida: Digite o número da operação: Operação inválida. Tente novamente.</pre></article><article><h2>BUG-09</h2><pre>Entradas: 11 -&gt; 60 -&gt; n
+Esperado: Resultado proximo de 0.5
+Codigo de saida: 1
+Saida:
+NameError: name &#x27;cosseno&#x27; is not defined</pre></article><article><h2>BUG-10</h2><pre>Entradas: 12 -&gt; 45 -&gt; n
+Esperado: Resultado proximo de 1.0
+Codigo de saida: 1
+Saida:
+NameError: name &#x27;tangente&#x27; is not defined</pre></article><article><h2>BUG-11</h2><pre>Entradas: 1 -&gt; abc
+Esperado: Avisar entrada invalida sem encerrar com excecao
+Codigo de saida: 1
+Saida:
+ValueError: could not convert string to float: &#x27;abc&#x27;</pre></article></div></section><section id="tdd"><h1>TDD - correção da adição</h1><p>Saídas reais das execuções antes e depois da correção.</p><article><h2>Red: teste antes da correção</h2><p>01-red.txt</p><pre>test_adicao_de_dois_positivos (test_calculadora.TestCalculadora.test_adicao_de_dois_positivos) ... FAIL
+
+======================================================================
+FAIL: test_adicao_de_dois_positivos (test_calculadora.TestCalculadora.test_adicao_de_dois_positivos)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File &quot;C:\Projetos\SENAI\Alta Qualidade em Software\Parada Obrigatória 2\test_calculadora.py&quot;, line 25, in test_adicao_de_dois_positivos
+    self.assertIn(&quot;Resultado: 5.0\n&quot;, saida)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: &#x27;Resultado: 5.0\n&#x27; not found in &#x27;Bem-vindo à Calculadora Científica\nEscolha a operação que deseja realizar:\n0. Sair\n1. Adição\n2. Subtração\n3. Multiplicação\n4. Divisão\n5. Potenciação\n6. Raiz Quadrada\n7. Fatorial\n8. Logaritmo Natural (ln)\n9. Logaritmo Base 10\n10. Seno\n11. Cosseno\n12. Tangente\nDigite o número da operação: Digite o primeiro número: Digite o segundo número: Resultado: 7.0\nDeseja realizar outra operação? (s/n): &#x27;
+
+----------------------------------------------------------------------
+Ran 1 test in 0.169s
+
+FAILED (failures=1)
+</pre></article><article><h2>Green: correção mínima</h2><p>02-green.txt</p><pre>test_adicao_de_dois_positivos (test_calculadora.TestCalculadora.test_adicao_de_dois_positivos) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.163s
+
+OK
+</pre></article><article><h2>Refactor: regressão com unittest</h2><p>03-refactor-unittest.txt</p><pre>test_adicao_com_decimais (test_calculadora.TestCalculadora.test_adicao_com_decimais) ... ok
+test_adicao_com_zero (test_calculadora.TestCalculadora.test_adicao_com_zero) ... ok
+test_adicao_de_dois_positivos (test_calculadora.TestCalculadora.test_adicao_de_dois_positivos) ... ok
+test_adicao_de_negativos (test_calculadora.TestCalculadora.test_adicao_de_negativos) ... ok
+test_divisao (test_calculadora.TestCalculadora.test_divisao) ... ok
+test_logaritmos_negativos (test_calculadora.TestCalculadora.test_logaritmos_negativos) ... ok
+test_multiplicacao (test_calculadora.TestCalculadora.test_multiplicacao) ... ok
+test_opcao_invalida (test_calculadora.TestCalculadora.test_opcao_invalida) ... ok
+test_potencia (test_calculadora.TestCalculadora.test_potencia) ... ok
+test_raiz_negativa (test_calculadora.TestCalculadora.test_raiz_negativa) ... ok
+test_raiz_quadrada (test_calculadora.TestCalculadora.test_raiz_quadrada) ... ok
+test_realizar_outra_operacao (test_calculadora.TestCalculadora.test_realizar_outra_operacao) ... ok
+test_sair (test_calculadora.TestCalculadora.test_sair) ... ok
+test_subtracao (test_calculadora.TestCalculadora.test_subtracao) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 2.781s
+
+OK
+</pre></article><article><h2>Verificação com pytest</h2><p>04-pytest.txt</p><pre>..............                                                       [100%]
+14 passed, 4 subtests passed in 3.13s
+</pre></article></section></html>
